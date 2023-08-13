@@ -1,6 +1,6 @@
 from Bibliotecas import bebidas
 from Bibliotecas import clientes
-def menuFuncionario(senha):
+def menuFuncionario(senha, lista):
     print('**************************')
     print('*****MENU FUNCIONARIO*****')
     print('**************************\n')
@@ -49,13 +49,13 @@ def menuFuncionario(senha):
                 else:
                     match opcao:
                         case 1:
-                            bebidas.adicionarBebidas()
+                            bebidas.adicionarBebidas(lista)
                         case 2:
                             bebidas.alterarBebidas()
                         case 3:
                             bebidas.excluirBebidas()
                         case 4:
-                            bebidas.listarBebidas()
+                            bebidas.listarBebidas(lista)
                         case 5:
                             exit(0)
                         case _:
@@ -63,14 +63,19 @@ def menuFuncionario(senha):
     else:
         print('Senha Invalida!!!')
 
-def menuCliente():
+def menuCliente(lista):
     print('**********************')
     print('*****MENU CLIENTE*****')
     print('**********************\n')
-    listarBebidas()
+    print('1 = Listar Bebidas')
+
     try:
         opcao = int(input('Digite o codigo da bebida desejada: '))
     except ValueError:
         print('Digite um inteiro valido!!!')
     else:
-        print(opcao)
+        match opcao:
+            case 1:
+                bebidas.listarBebidas(lista)
+            case _:
+                print('Opcao Inexistente!!')

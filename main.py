@@ -1,5 +1,6 @@
 from Bibliotecas import *
 primeraVez = True
+bebidas = []
 
 while(True):
     print('**********************')
@@ -21,9 +22,11 @@ while(True):
                     confirmar = input('\nConfirmar senha?(s=sim/n=não)')
                     if confirmar == 's' or confirmar == 'S':
                         primeraVez = False
-                        menuFuncionario(senha)
+                        menuFuncionario(senha, bebidas)
                     else:
-                        menuFuncionario(senha)
+                        continue
+                else:
+                    menuFuncionario(senha, bebidas)
             case 2:
                 menuCliente()
             case 3:

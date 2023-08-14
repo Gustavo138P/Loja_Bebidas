@@ -1,5 +1,6 @@
 from Bibliotecas import bebidas
 from Bibliotecas import clientes
+
 def menuFuncionario(senha, lista):
     print('**************************')
     print('*****MENU FUNCIONARIO*****')
@@ -54,9 +55,9 @@ def menuFuncionario(senha, lista):
                             case 1:
                                 bebidas.adicionarBebidas(lista)
                             case 2:
-                                bebidas.alterarBebidas()
+                                bebidas.alterarBebidas(lista)
                             case 3:
-                                bebidas.excluirBebidas()
+                                bebidas.excluirBebidas(lista)
                             case 4:
                                 bebidas.listarBebidas(lista)
                             case 5:

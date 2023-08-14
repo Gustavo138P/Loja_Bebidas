@@ -28,7 +28,7 @@ while(True):
                 else:
                     menuFuncionario(senha, bebidas)
             case 2:
-                menuCliente()
+                menuCliente(bebidas)
             case 3:
                 exit(0)
             case _:

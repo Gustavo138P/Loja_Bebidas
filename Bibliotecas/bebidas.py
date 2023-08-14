@@ -64,8 +64,45 @@ def alterarBebidas(lista):
                                         print('Digite um inteiro valido!!!')
 
 
-def excluirBebidas():
-    print('Digite o nome da Bebida:')
+def excluirBebidas(lista):
+    print('************************')
+    print('*****EXCLUIR BEBIDA*****')
+    print('************************\n')
+    print('1 = Buscar por nome')
+    print('2 = Buscar por codigo')
+    try:
+        opcao = int(input('Digite a opcao desejada: '))
+    except ValueError:
+        print('Digite um inteiro valido!!!')
+    else:
+        if opcao == 1:
+            nome = input('Digite o nome da bebida que deseja excluir: ')
+            indice = 0
+            for bebida in lista:
+                if bebida['nome'] == nome:
+                    print(f'Bebida a excluir: {bebida["nome"]}')
+                    confirmacao = input('\033[1;33mConfirmar(s=sim/n=nao):\033[m ')
+                    if (confirmacao == 's' or confirmacao == 'S' or confirmacao == 'Sim' or confirmacao == 'sim'):
+                        lista.pop(indice)
+                        print('Bebida excluida com sucesso!!!')
+                indice+=1
+        elif opcao == 2:
+            try:
+                codigo = int(input('Digite o codigo da bebida que deseja excluir: '))
+            except ValueError:
+                print('Digite um inteiro valido!!!')
+            else:
+                indice = 0
+                for bebida in lista:
+                    if bebida['codigo'] == codigo:
+                        print(f'Bebida a excluir: {bebida["nome"]}')
+                        confirmacao = input('\033[1;33mConfirmar(s=sim/n=nao):\033[m ')
+                        if (confirmacao == 's' or confirmacao == 'S' or confirmacao == 'Sim' or confirmacao == 'sim'):
+                            lista.pop(indice)
+                            print('Bebida excluida com sucesso!!!')
+                    indice += 1
+
+
 
 def listarBebidas(lista):
     for bebida in lista:

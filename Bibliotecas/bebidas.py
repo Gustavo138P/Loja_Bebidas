@@ -104,5 +104,5 @@ def excluirBebidas(lista):
 
 def listarBebidas(lista):
     for bebida in lista:
-        print(f"Bebida {bebida['codigo']}\nNome: {bebida['nome']}\nQuantidade: {bebida['quantidade']}\nCodigo: {bebida['codigo']}")
+        print(f"Bebida {bebida['codigo']}\nNome: {bebida['nome']}\nQuantidade: {bebida['quantidade']}\nValor: {bebida['valor']}\nCodigo: {bebida['codigo']}")
         print('\n----------------------------------------------')

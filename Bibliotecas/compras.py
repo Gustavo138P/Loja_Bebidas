@@ -14,7 +14,7 @@ def comprar(lista):
             indice = 0
             for bebida in lista:
                 if bebida['nome'] == nome:
-                    print(f'Bebida escolhida: {bebida["nome"]}')
+                    print(f'Bebida a comprar: {bebida["nome"]}\nValor: {bebida["valor"]}')
                     try:
                         quantidade = int(input('Digite a quantidade desejada: '))
                     except ValueError:
@@ -24,7 +24,7 @@ def comprar(lista):
                         if (confirmacao == 's' or confirmacao == 'S' or confirmacao == 'Sim' or confirmacao == 'sim'):
                             valorCompra = quantidade*bebida['valor']
                             print('Compra realizada com sucesso!!!')
-                            bebida['quantidade'] = bebida['quantidade'] - 1
+                            bebida['quantidade'] = bebida['quantidade'] - quantidade
                             return valorCompra
                 indice+=1
         elif opcao == 2:
@@ -46,6 +46,6 @@ def comprar(lista):
                             if (confirmacao == 's' or confirmacao == 'S' or confirmacao == 'Sim' or confirmacao == 'sim'):
                                 valorCompra = quantidade * bebida['valor']
                                 print('Compra realizada com sucesso!!!')
-                                bebida['quantidade'] = bebida['quantidade'] - 1
+                                bebida['quantidade'] = bebida['quantidade'] - quantidade
                                 return valorCompra
                     indice += 1

@@ -6,6 +6,7 @@ def adicionarBebidas(lista):
     atual['quantidade'] = int(input('Digite a quantidade: '))
     codigo = random.randint(0, 100)
     atual['codigo'] = codigo
+    atual['valor'] = float(input('Digite o valor da bebida: '))
     lista.append(atual.copy())
     atual.clear()
 
@@ -63,7 +64,6 @@ def alterarBebidas(lista):
                                     except ValueError:
                                         print('Digite um inteiro valido!!!')
 
-
 def excluirBebidas(lista):
     print('************************')
     print('*****EXCLUIR BEBIDA*****')
@@ -101,8 +101,6 @@ def excluirBebidas(lista):
                             lista.pop(indice)
                             print('Bebida excluida com sucesso!!!')
                     indice += 1
-
-
 
 def listarBebidas(lista):
     for bebida in lista:

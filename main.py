@@ -1,6 +1,7 @@
 from Bibliotecas import *
 primeraVez = True
 bebidas = []
+comprar = 0
 
 while(True):
     print('**********************')
@@ -28,7 +29,7 @@ while(True):
                 else:
                     menuFuncionario(senha, bebidas)
             case 2:
-                menuCliente(bebidas)
+                menuCliente(bebidas, comprar)
             case 3:
                 exit(0)
             case _:

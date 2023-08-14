@@ -1,5 +1,6 @@
 from Bibliotecas import bebidas
 from Bibliotecas import clientes
+from Bibliotecas import compras
 
 def menuFuncionario(senha, lista):
     print('**************************')
@@ -67,11 +68,12 @@ def menuFuncionario(senha, lista):
     else:
         print('Senha Invalida!!!')
 
-def menuCliente(lista):
+def menuCliente(lista, comprar):
     print('**********************')
     print('*****MENU CLIENTE*****')
     print('**********************\n')
     print('1 = Listar Bebidas')
+    print('2 = Comprar Bebidas')
 
     try:
         opcao = int(input('Digite o codigo da bebida desejada: '))
@@ -81,5 +83,8 @@ def menuCliente(lista):
         match opcao:
             case 1:
                 bebidas.listarBebidas(lista)
+            case 2:
+                comprar = compras.comprar(lista)
+                print(f'Valor da compra = {comprar}')
             case _:
                 print('Opcao Inexistente!!')
